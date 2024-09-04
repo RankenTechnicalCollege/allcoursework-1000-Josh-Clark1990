@@ -1,0 +1,42 @@
+body {
+background-color:#1D64F2;
+}
+
+p {
+color: #F079F2;
+font-family: helvetica;
+
+}
+
+h1 {
+  color: #F079F2;
+  font-family: helvetica
+}
+
+li {
+  color: #F079F2;
+  font-family: helvetica;  
+}
+
+ul {
+  color: #F079F2;
+font-family: helvetica;
+
+}
+
+a {
+  color: #F079F2;
+font-family: helvetica;
+}
+
+#wrapper {
+  margin-right: auto; 
+  margin-left:  auto; 
+  margin-top: 0%;
+  margin-bottom: 0%;
+  max-width: 2500px; 
+  width: 90%;
+
+  padding-right: 5px; 
+  padding-left:  5px; 
+}
