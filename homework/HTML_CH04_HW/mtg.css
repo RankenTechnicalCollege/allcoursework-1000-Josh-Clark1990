@@ -12,7 +12,6 @@ body {
 
 h1 {
   color: #db4c14;
-  size: 40px;
   background-color: rgb(54, 54, 139);
   text-shadow: -6px -6px 10px rgb(26, 1, 34);
   text-align: center;
@@ -39,7 +38,7 @@ div.formats {
 }
 
 ul {
-  font: 15px helvetica, sans-serif bolder;
+  font: 15px "helvetica, sans-serif bolder";
   color:#c5eeeb;
   text-align: center;
   border-style: groove;
@@ -63,7 +62,7 @@ main li {
 div.links{
   color: #d058ff;
   text-align: center;
-  font: 20px helvetica, sans-serif bold;
+  font: 20px "helvetica, sans-serif bold";
   text-decoration: none;
   border-style: groove;
   border-width: medium;
@@ -72,7 +71,7 @@ div.links{
 a {
   color: #d058ff;
   text-align: center;
-  font: 20px helvetica, sans-serif bold;
+  font: 20px "helvetica, sans-serif bold";
   text-decoration: none;
   border-style: groove;
   border-width: medium;
@@ -82,7 +81,7 @@ a {
 a:link {
   color: rgb(231, 71, 165);
   text-align: center;
-  font: 20px helvetica, sans-serif bold;
+  font: 20px "helvetica, sans-serif bold";
   text-decoration: none;
   border-style: groove;
   border-width: medium;
