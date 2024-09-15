@@ -47,6 +47,8 @@ html{
   position: relative;
   background-color: rgb(47, 0, 255);
   opacity: 75%;
+  border-radius: 15px;
+  text-align: center;
 
 }
 
@@ -64,6 +66,7 @@ html{
   padding: 1em;
   background-color: rgb(47, 0, 255);
   color: white;
+  border-radius: 15px;
 }
 
 .navbar-link:hover, .navbar-link:focus {
@@ -109,36 +112,30 @@ background-color: rgb(255, 255, 255);
 border-style: inset;
 }
 
-.gp01{
-  border-style: groove;
-  border-color:blue ;
+.paragraph {
+  background-color: blue;
+  color: white;
+  border-style: outset;
+  border-width: 5px;
+  border-color: red;
+  border-radius: 15px;
+  font-family: helvetica;
+  font-size: larger;
 }
 
-.gp02{
-  border-style: groove;
-  border-color:blue ;
-}
 
-.zetagundam{
-  border-style: groove;
-  border-color:blue ;
-}
-
-.argama{
-  border-style: groove;
-  border-color:blue ;
-}
 
 .footer{
   background-color: red;
   text-align: center;
 }
 
-@media screen and (max-width: 500px){
-  .navbar .navbar-item .navbar-menu{
-    text-align: center;
-    float:none;
+@media (max-width: 600px){
+  .navbar-menu {
     flex-direction: column;
-    flex-wrap: wrap;
+  }
+  .navbar-item .navbar-link {
+    flex: none;
+    width: 100%;
   }
 }
