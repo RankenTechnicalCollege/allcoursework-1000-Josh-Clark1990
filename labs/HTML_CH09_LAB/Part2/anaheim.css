@@ -4,12 +4,14 @@
 
 html{
   font:12pt helvetica, sans-serif;
+  margin: 10px;
+  padding: 10px;
 }
 
-.body {
+body {
   margin:0;
   padding: 0;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   height: 100vh;
 }
 
@@ -51,7 +53,27 @@ html{
   text-align: center;
 
 }
+.navbar-menu .navbar-menu{
+  display:none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  top:100%;
+  min-width: 5em;
+}
 
+.navbar-menu .navbar-menu{
+  display:none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  top:100%;
+  min-width: 5em;
+}
 .navbar-item{
   display: block;
   flex:0 0 auto;
@@ -101,13 +123,14 @@ html{
 /*content*/
 
 .content{
+width: 60%;  
 display: flex ;
 flex-wrap: wrap;
 justify-content: space-evenly;
 align-items: center;
 flex-grow: 1;
-margin: 0;
-padding: 0;
+margin: 10px;
+padding: 10px;
 background-color: rgb(255, 255, 255);
 border-style: inset;
 }
@@ -128,6 +151,7 @@ border-style: inset;
 .footer{
   background-color: red;
   text-align: center;
+  position: relative;
 }
 
 @media (max-width: 600px){
@@ -156,6 +180,15 @@ border-style: inset;
 
 }
 
+.argama{
+  display:flex;
+  justify-content: center;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
 h2{
   font-family: helvetica, sans-serif;
   font-size: 30px;
@@ -175,13 +208,6 @@ h2{
 
 }
 
-.aside-pictures{
-  display:flex;
-  justify-content: center;
-  padding:0;
-  margin:0;
-  display: block;
-}
 
 @media only screen and (min-width:600px) {
   .aside {
