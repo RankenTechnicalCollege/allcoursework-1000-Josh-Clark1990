@@ -1,111 +1,110 @@
 body{
   background-color: #3e5da7;
   margin: auto;
+  padding: 10px;
 
 }
 
 .header{
   background-color: #3e5da7;
   color: #f9c7d6;
-  box-shadow: 15px 15px;
   font-family:helvetica, sans-serif;
   font-size: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
  
+}
 
+.column{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
 }
 
 .tagline{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  justify-content: left; 
   width: 100%;
+  position: relative;
+  flex-wrap: nowrap;
+
   
 }
 
 .header-name{
   font-family: helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   background-color: #dd4d96;
   color: #e9d561;
   box-shadow: 15px 15px;
+  height: 60px;
+  display:flex ;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: nowrap;
 
   
 }
 
 
 .logo2{
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /*NAVBAR*/
-
 .navbar-menu{
-  display: flex;
-  justify-content: center;
+  display:flex;
+  justify-content: flex-start;
   align-items: stretch;
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  position: relative;
+  padding:0;
+  position:relative;
   background-color: #dd4d96;
-  text-align: center;
-  font-family:Helvetica, sans-serif;
-
+  text-align: left;
+  font-family: helvetica, sans-serif;
+  flex-direction: row;
 }
-
 
 .navbar-link{
-  display: block;
+  display:flex;
   text-decoration: none;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   padding: 1em;
-  background-color: #f1ee92;
-  color: rgb(0, 0, 0);
+  background-color:#f1ee92;
+  border-style:groove;
+  border-width: 5px;
+  box-shadow: #dd4d96 5px 5px 5px;
   border-radius: 15px;
-  font-family: Helvetica, sans-serif;
+  font-family: helvetica,sans-serif;
   font-size: 20px;
-  font-weight: bolder;
-}
+  font-weight: bold;
 
-.navbar-link:hover, .navbar-link:focus {
-  background-color: #dd4d96;
-}
+ 
+ }
+ 
+ .navbar-link:hover, .navbar-link:focus{
+   background-color:#dd4d96;
+ }
 
-.navbar-menu .navbar-menu{
-  display:none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  text-align: center;
-  top:100%;
-  min-width: 5em;
-  font-size: 20px;
-  color: black;
-}
+ .navbar-item:hover > .navbar-menu,
+ .navbar-link:hover ~ .navbar-menu,
+ .navbar-item:focus-within > .navbar-menu,
+ .navbar-link:focus ~ .navbar-menu{
+   display:flex;
+ }
 
-.navbar-menu .navbar-menu .navbar-item{
-  flex: 0 0 3em;
-}
 
-.navbar-menu .navbar-menu .navbar-link{
-  padding-left: 2em;
-}
 
-.navbar-item:hover > .navbar-menu,
-.navbar-link:hover ~ .navbar-menu,
-.navbar-item:focus-within > .navbar-menu,
-.navbar-link:focus ~ .navbar-menu{
-  display:flex;
-}
+/*MAIN*/
 
 .main {
   background-color: #3e5da7;
@@ -122,8 +121,11 @@ body{
 
 
 img{
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .headshot{
@@ -178,27 +180,24 @@ img{
   font-size: 15px;
   box-shadow: 15px 15px;
   text-align: center;
+  padding: 10px;
+  margin:10px;
 }
 
+.footer-title{
+  text-align: right;
+  font-size: 15px;
+}
 
 
 @media (max-width: 599px){
-  .navbar-menu, .main, .main2, .header{
+  .navbar-menu, .main, .main2, .header, .tagline, .logo2{
     flex-direction: column;
   }
-  .navbar-item .navbar-link {
-    flex: none;
-    width: 100%;
+
+  .flip{
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
-
-@media only screen 
-and (min-device-width: 480px) 
-and (max-device-width: 640px) {
-
-}
-
-@media (min-width: 600px){
-
-}
