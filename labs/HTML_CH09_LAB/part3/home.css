@@ -2,6 +2,7 @@ body {
   background-color: #3e5da7;
   margin: auto;
   padding: 10px;
+  min-width: 500px;
 
 }
 

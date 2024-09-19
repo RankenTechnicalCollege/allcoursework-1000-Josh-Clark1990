@@ -1,11 +1,8 @@
-{
-  box-sizing: border-box;
-}
-
 html{
   font:12pt helvetica, sans-serif;
   margin: 10px;
   padding: 10px;
+  cursor: crosshair;
 }
 
 body {
@@ -41,84 +38,51 @@ body {
 
 .navbar-menu{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
   list-style-type: none;
   margin: 0;
   padding: 0;
   position: relative;
   background-color: rgb(47, 0, 255);
-  opacity: 75%;
-  border-radius: 15px;
+  opacity: 85%;
   text-align: center;
-
-}
-.navbar-menu .navbar-menu{
-  display:none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  text-align: center;
-  top:100%;
-  min-width: 5em;
-}
-
-.navbar-menu .navbar-menu{
-  display:none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  text-align: center;
-  top:100%;
-  min-width: 5em;
-}
-.navbar-item{
-  display: block;
-  flex:0 0 auto;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar-link{
-  display: block;
+  display: flex;
   text-decoration: none;
-  cursor: pointer;
+  text-align: center;
+  padding: 10px 20px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  cursor: crosshair;
   padding: 1em;
   background-color: rgb(47, 0, 255);
-  color: white;
-  border-radius: 15px;
+  object-fit: contain;
+  padding: 10px, 20px;
 }
+
 
 .navbar-link:hover, .navbar-link:focus {
   background-color: rgb(241, 8, 8);
 }
 
-.navbar-menu .navbar-menu{
-  display:none;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  top:100%;
-  min-width: 10em;
+.navbar-item:hover, .navbar-item:focus{
+  background-color: rgb(241, 8, 8);
+
 }
 
-.navbar-menu .navbar-menu .navbar-item{
-  flex: 0 0 3em;
-}
 
-.navbar-menu .navbar-menu .navbar-link{
-  padding-left: 2em;
-}
-
-.navbar-item:hover > .navbar-menu,
-.navbar-link:hover ~ .navbar-menu,
-.navbar-item:focus-within > .navbar-menu,
-.navbar-link:focus ~ .navbar-menu{
-  display:flex;
-}
 
 /*content*/
 
