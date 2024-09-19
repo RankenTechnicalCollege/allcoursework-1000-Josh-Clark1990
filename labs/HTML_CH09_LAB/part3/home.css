@@ -1,106 +1,104 @@
-body{
+body {
   background-color: #3e5da7;
   margin: auto;
   padding: 10px;
 
 }
 
-.header{
+.header {
   background-color: #3e5da7;
   color: #f9c7d6;
-  font-family:helvetica, sans-serif;
+  font-family: helvetica, sans-serif;
   font-size: 20px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
- 
+
+
 }
 
-.column{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row; 
-}
-
-.tagline{
+.column {
   display: flex;
   flex-direction: column;
+}
+
+.tagline {
+  display: flex;
+  flex-direction: row;
   align-items: left;
-  justify-content: left; 
+  justify-content: left;
   width: 100%;
   position: relative;
   flex-wrap: nowrap;
 
-  
+
 }
 
-.header-name{
+.header-name {
   font-family: helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 30px;
   background-color: #dd4d96;
   color: #e9d561;
-  box-shadow: 15px 15px;
-  height: 60px;
-  display:flex ;
+  height: 40px;
+  display: flex;
   flex-direction: row;
-  position: relative;
-  flex-wrap: nowrap;
-
-  
+  flex-wrap: wrap;
 }
 
 
-.logo2{
-  width: 300px;
-  height: 300px;
+.logo2 {
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
 /*NAVBAR*/
-.navbar-menu{
-  display:flex;
+.navbar-menu {
+  display: flex;
   justify-content: flex-start;
-  align-items: stretch;
   list-style-type: none;
-  margin: 0;
-  padding:0;
-  position:relative;
+  position: relative;
   background-color: #dd4d96;
-  text-align: left;
+  text-align: center;
   font-family: helvetica, sans-serif;
   flex-direction: row;
+  flex-shrink: 0;
 }
 
-.navbar-link{
-  display:flex;
+  .navbar-link {
+    text-decoration: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+}
+
+
+.navbar-item{
+  display: flex;
   text-decoration: none;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   padding: 1em;
-  background-color:#f1ee92;
-  border-style:groove;
+  background-color: #f1ee92;
+  border-style: groove;
   border-width: 5px;
   box-shadow: #dd4d96 5px 5px 5px;
   border-radius: 15px;
-  font-family: helvetica,sans-serif;
+  font-family: helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
+  object-fit: contain;
+  flex-shrink: 0;
 
- 
- }
- 
- .navbar-link:hover, .navbar-link:focus{
-   background-color:#dd4d96;
- }
+}
 
- .navbar-item:hover > .navbar-menu,
- .navbar-link:hover ~ .navbar-menu,
- .navbar-item:focus-within > .navbar-menu,
- .navbar-link:focus ~ .navbar-menu{
-   display:flex;
- }
+.navbar-link:hover,
+.navbar-link:focus {
+  background-color: #dd4d96;
+}
+
+
 
 
 
@@ -108,19 +106,20 @@ body{
 
 .main {
   background-color: #3e5da7;
-  color:	#f9c7d6;
+  color: #f9c7d6;
   font-family: helvetica, sans-serif;
-  display:flex;
+  display: flex;
   column-gap: 20px;
   display: flex;
   flex-direction: row;
   padding: 5px;
-  margin: 5px;;
+  margin: 5px;
+  ;
 }
 
 
 
-img{
+img {
   height: 500px;
   width: 500px;
   display: flex;
@@ -128,43 +127,45 @@ img{
   flex-wrap: wrap;
 }
 
-.headshot{
-  display:flex;
+.headshot {
+  display: flex;
   flex-direction: column;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
+  flex-shrink:  1;
+
 
 }
 
-.paragraph{
-  display:flex;
+.paragraph {
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   width: 90%;
-  
+
 
 }
 
-.main2{
-  display:flex;
+.main2 {
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 90%;
 }
 
 
-.link{
-  display:flex;
+.link {
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  
+
 
 
 }
 
-.logo{
+.logo {
   width: 75px;
   height: 75px;
   display: flex;
@@ -173,31 +174,47 @@ img{
 }
 
 
-.footer{
-  color:#e9d561;
+.footer {
+  color: #e9d561;
   background-color: #dd4d96;
   font-family: helvetica, sans-serif;
   font-size: 15px;
   box-shadow: 15px 15px;
   text-align: center;
   padding: 10px;
-  margin:10px;
+  margin: 10px;
 }
 
-.footer-title{
+.footer-title {
   text-align: right;
   font-size: 15px;
 }
 
 
-@media (max-width: 599px){
-  .navbar-menu, .main, .main2, .header, .tagline, .logo2{
+@media (max-width: 599px) {
+
+  .navbar-menu,
+  .navbar-link,
+  .navbar-item,
+  .main,
+  .main2,
+  .header,
+  .tagline,
+  .logo2 {
     flex-direction: column;
+
+  
   }
 
-  .flip{
+  .flip {
     display: flex;
     flex-direction: column-reverse;
   }
-}
 
+  .navbar-item,
+  .navbar-link,
+  .navbar.menu {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
