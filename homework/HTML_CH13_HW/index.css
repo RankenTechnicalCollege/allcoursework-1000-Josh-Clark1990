@@ -1,0 +1,14 @@
+.favoritegenres{
+  border-style: solid;
+}
+
+.pickone{
+  border-style: solid;
+}
+
+body{
+  border-style: solid;
+  max-width: 500px;
+  padding:1em;
+  margin: 1em;
+}

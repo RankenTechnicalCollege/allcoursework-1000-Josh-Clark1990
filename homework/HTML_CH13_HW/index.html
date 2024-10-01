@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1> Music Survey</h1>
+  <form class="input">
+    Name:<br><input type="text"><br>
+    Email:<br><input type="email">
+  </form>
+  <br>
+  <br>
+
+  <div class="favoritegenres">
+    <form class="genres">
+      <h3>Favorite Genres</h3>
+      <input type="checkbox" id="option1" name="option1" value="rock">
+      <label for="option1">Rock</label><br>
+      <input type="checkbox" id="option2" name="option2" value="hiphop">
+      <label for="option2">Hip Hop</label><br>
+      <input type="checkbox" id="option3" name="option3" value="jazz">
+      <label for="option3">Jazz</label><br>
+      <input type="checkbox" id="option4" name="option4" value="house">
+      <label for="option4">House</label><br>
+      <input type="checkbox" id="option5" name="option5" value="classical">
+      <label for="option5">Classical</label><br>
+      <input type="checkbox" id="option6" name="option6" value="ska">
+      <label for="option6">Ska</label><br>
+      <input type="checkbox" id="option7" name="option7" value="breakbeat">
+      <label for="option7">Breakbeat</label><br>
+      <input type="checkbox" id="option8" name="option8" value="Folk">
+      <label for="option8">Folk</label><br>
+      <input type="checkbox" id="option9" name="option9" value="chiptune">
+      <label for="option9">Chiptune</label>
+    </form>
+  </div>
+  <br>
+  <br>
+
+  <div class="pickone">
+    <form class="radio">
+      <h3>How do you primarily access music?</h3>
+      <input type="radio" id="streaming" name="listen" value="streaming">
+      <label for="streaming">Streaming</label><br>
+      <input type="radio" id="physical" name="listen" value="physical">
+      <label for="physical">Physical Media</label><br>
+      <input type="radio" id="piracy" name="listen" value="piracy">
+      <label for="piracy">Piracy</label><br>
+      <input type="radio" id="radiostation" name="listen" value="radiostation">
+      <label for="radiostation">Radio</label>
+    </form>
+  </div>
+
+  <br>
+  <br>
+  <form class="dropdown">
+    <select id="style_and_size" size="3">
+      <optgroup label="Where do you listen to music at most?">
+        <option value="home">Home</option>
+        <option value="work">Work</option>
+        <option value="car">Car</option>
+        <option value="shower">Shower</option>
+        <option value="concerts">Concerts</option>
+        <option value="gym">Gym</option>
+        <option value="gaming">While Gaming</option>
+      </optgroup>
+    </select>
+  </form>
+
+
+  <form class="what">
+    <h2>What role does music play in your life?</h2>
+    <textarea class="scrolltablbox" rows="3" cols="60"></textarea>
+
+  </form>
+  <br>
+
+
+  <form class="buttons">
+    <button type="submit" value="submit"> Submit</button>
+    <button type="reset" value="reset"> Reset </button>
+  </form>
+  <br>
+  <footer class="footer">
+    &COPY;Clark 2024<br>joshua_clark@inside.ranken.org</footer>
+</body>
+
+</html>
