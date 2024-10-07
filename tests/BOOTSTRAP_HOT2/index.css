@@ -1,0 +1,21 @@
+.carousel-item{
+
+width: 700px;
+
+height: 300px;
+  }
+
+  #carouselExampleIndicators{
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+  }
+
+  body{
+    margin: 2em;
+    padding: auto;
+  }
+
+  .row{
+    align-items: center;
+  }
