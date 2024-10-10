@@ -4,13 +4,13 @@
 let total = 0;
 
 //get 3 scores from user and add them together
-const score1 = parseInt(prompt("Enter test score"));
+const score1+ = parseInt(prompt("Enter test score"));
 total += score1;
 
-const score2 = parseInt(prompt("Enter test score"));
+const score2+ = parseInt(prompt("Enter test score"));
 total += score2;
 
-const score3 = parseInt(prompt("Enter test score"));
+const score3+ = parseInt(prompt("Enter test score"));
 total += score3;
 
 //calculate the average
