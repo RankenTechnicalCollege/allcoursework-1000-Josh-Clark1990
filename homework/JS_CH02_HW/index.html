@@ -9,15 +9,36 @@
 
 <h1>WcDonalds</h1>
 <div id="orderform">
-<label for="quantity">Burger: $3</label><br>
+<label for="quantity">Burger: $13.69</label><br>
 <input type="number" id="burgers" name="burgers" min="0" max="100"><br>
-<label for="quantity">Fries: $2</label><br>
+<label for="quantity">Fries: $22.10</label><br>
 <input type="number" id="fries" name="fries" min="0" max="100"><br>
-<label for="quantity">Soda: $1</label><br>
+<label for="quantity">Soda: $11.50</label><br>
 <input type="number" id="soda" name="soda" min="0" max="100"><br><br>
-<button type="submit" form="form1" value="Submit">Get Total</button><br>
+<button type="button" onclick="addQty();">Add to Cart</button>
 </div>
+<br>
+<div id="final"></div>
+<p id="output"></p>
+<div id="please"></div>
 
+<script>
+  "use strict";
+  function addQty() {
+    const burgers = document.getElementById("burgers").value;
+    const fries = document.getElementById("fries").value;
+    const soda = document.getElementById("soda").value;
+  
+    const total = (burgers * 13.69) + (fries * 22.10) + (soda * 11.50);
+   const html= `<p><label>Total: </label>${total.toFixed(2)}<p>`;
+    document.getElementById("final").innerHTML= "Thank You, Your Total Is:";
+    document.getElementById("output").innerHTML= display;
+    let display= `Thank you, Your Total is:$ ${total}`;
+   
+  
+  }
+
+  </script>
   
 </body>
 </html>
