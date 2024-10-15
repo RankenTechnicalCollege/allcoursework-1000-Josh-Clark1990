@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Score Calculator</title>
+</head>
+<body>
+  <h1> Enter Test Scores Here</h1>
+    <form>
+        <input type="number" id="box1" name="box1" min="0" max="100"><br><br>
+        <input type="number" id="box2" name="box2" min="0" max="100"><br><br>
+        <input type="number" id="box3" name="box3" min="0" max="100"><br><br>
+        <input type="number" id="box4" name="box4" min="0" max="100"><br><br>
+        <input type="number" id="box5" name="box5" min="0" max="100"><br><br>
+        <button type="button" onclick="calcAvg()">Get Average Scores</button>
+    </form>
+    <p id="results"></p>
+
+    <script>
+        "use strict";
+        function calcAvg() {
+            const box1 = parseFloat(document.getElementById("box1").value) || 0;
+            const box2 = parseFloat(document.getElementById("box2").value) || 0;
+            const box3 = parseFloat(document.getElementById("box3").value) || 0;
+            const box4 = parseFloat(document.getElementById("box4").value) || 0;
+            const box5 = parseFloat(document.getElementById("box5").value) || 0;
+
+            const sum = box1 + box2 + box3 + box4 + box5;
+            const average = sum / 5;
+
+            const display = `Your Average Score is: ${average.toFixed(2)}`;
+            document.getElementById("results").innerHTML = display;
+        }
+    </script>
+</body>
+</html>

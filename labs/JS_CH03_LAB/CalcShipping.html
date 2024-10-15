@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Cost Calculator</title>
+</head>
+<body>
+
+<form id="shippingForm">
+  <label for="price">Enter Price</label>
+  <input type="number" id="price" name="price"><br><br>
+  <button type="button" onclick="calculateShipping()">Calculate Shipping</button>
+</form>
+<p id="ship"></p>
+
+<script>
+  "use strict";
+
+function calculateShipping() {
+  const price = parseFloat(document.getElementById("price").value);
+  let shipping;
+
+  if(isNaN(price) || price < 0) {
+    document.getElementById("ship").innerHTML ="Please Enter A Valid Price";
+    return;
+  }
+
+  if (price <= 25){
+    shipping =1.5;
+  } else {
+    shipping=price * 0.10;
+  }
+  const total= price + shipping;
+  const display= `Your Shipping Total is: ${shipping.toFixed(2)}<br>Total Cost: ${total.toFixed(2)}`;
+  document.getElementById("ship").innerHTML = display;
+}
+
+
+</script>
+</body>
+</html>
