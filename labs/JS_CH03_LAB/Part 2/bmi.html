@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+</head>
+<body>
+
+<form>
+<label for="weight">Weight in Pounds</label><br>
+<input type="number" id="weight" name="weight"><br>
+<label for="height">Height in Inches</label><br>
+<input type="number" id="height" name="number"><br>
+<label for="BMI">BMI</label><br>
+<input type="text" id="bmi" name="bmi"><br><br>
+<button type="button" onclick="calcBMI()">Calculate BMI</button><br>
+
+</form>
+
+<script>
+  "use strict";
+  function calcBMI() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+
+
+    const bmi = (weight * 703) / (height * height);
+
+    document.getElementById("bmi").value = bmi.toFixed(2);
+  }
+
+</script>
+</body>
+</html>

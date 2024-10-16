@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    "use strict";
+
+    let score=0;
+    do {
+      score = parseInt(
+        prompt("Enter number grade from 0 through 100 Or enter 999 to end entries", 999));
+    
+      if (score >= 0 && score <=60) {
+        alert ("F");
+      } else if (score >=60 && <=67){
+        alert ("D");
+      } else if (score >=68 && <=79){
+        alert ("C");
+      } else if (score >=80 && <=87){
+        alert ("B");
+      } else if (score >=88 && <=100){
+        alert ("A");
+      } else if (score = 999){
+        alert ("End Results");
+      }
+
+    }
+  </script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
 // get investment amount - loop until user enters a number
 let investment = 0;
+let again = "y";
 do {
     investment = parseFloat(
         prompt("Enter investment amount as xxxxx.xx", 10000));
@@ -22,7 +23,12 @@ do {
 }
 while ( isNaN(years) );
 
-// calulate future value
+do {
+    again = prompt("Repeat entries? (y/n?)" , "y")
+}
+while (again == "y");
+
+// calculate future value
 let futureValue = investment;
 for (let i = 1; i <= years; i++ ) {
     futureValue = futureValue + (futureValue * rate / 100);
