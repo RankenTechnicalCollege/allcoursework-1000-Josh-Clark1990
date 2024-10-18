@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Results</title>
 </head>
 <body>
+    <h1>Grade Results</h1>
+    <div id="results"></div>
 
-  <script>
-    "use strict";
+    <script>
+        "use strict";
 
-    let score=0;
-    do {
-      score = parseInt(
-        prompt("Enter number grade from 0 through 100 Or enter 999 to end entries", 999));
-    
-      if (score >= 0 && score <=60) {
-        alert ("F");
-      } else if (score >=60 && <=67){
-        alert ("D");
-      } else if (score >=68 && <=79){
-        alert ("C");
-      } else if (score >=80 && <=87){
-        alert ("B");
-      } else if (score >=88 && <=100){
-        alert ("A");
-      } else if (score = 999){
-        alert ("End Results");
-      }
+        let score = 0;
+        let scores = [];
+        let grades = [];
+        
+        do {
+            score = parseInt(prompt("Enter number grade from 0 through 100 or enter 999 to end entries", 999));
 
-    }
-  </script>
+            if (score >= 0 && score <= 60) {
+                scores.push(score);
+                grades.push("F");
+            } else if (score > 60 && score <= 67) {
+                scores.push(score);
+                grades.push("D");
+            } else if (score >= 68 && score <= 79) {
+                scores.push(score);
+                grades.push("C");
+            } else if (score >= 80 && score <= 87) {
+                scores.push(score);
+                grades.push("B");
+            } else if (score >= 88 && score <= 100) {
+                scores.push(score);
+                grades.push("A");
+            } else if (score != 999) {
+                alert("Invalid input. Please enter a number between 0 and 100.");
+            }
+
+        } while (score != 999);
+
+        // Now display the results in the HTML
+        let resultsDiv = document.getElementById("results");
+        let resultsHTML = "<ul>";
+
+        for (let i = 0; i < scores.length; i++) {
+            resultsHTML += `<li>Score: ${scores[i]}, Grade: ${grades[i]}</li>`;
+        }
+
+        resultsHTML += "</ul>";
+        resultsDiv.innerHTML = resultsHTML;
+    </script>
 </body>
 </html>
