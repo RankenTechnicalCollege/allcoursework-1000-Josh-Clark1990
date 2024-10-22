@@ -13,7 +13,7 @@
 <header>
 
  <!--NAVBAR-->
- <nav class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex">
+ <nav class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex border border-4 border-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="/images/updatedlogo.png" alt="logo" width="150px" height="150px">
@@ -39,6 +39,21 @@
 
 
 <main>
+<h1 class="text-center">Please Donate Today</h1>
+ <div class="donate" d-flex align-item-center>
+  <form action="https://www.paypal.com/donate" target="_blank" method="post" target="_top">
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="#">
+    <!-- Specify details about the contribution -->
+    <input type="hidden" name="no_recurring" value="0">
+    <input type="hidden" name="item_name" value="#">
+    <input type="hidden" name="item_number" value="#">
+    <input type="hidden" name="currency_code" value="USD">
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate">
+    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+   </form>
+  </div> 
 
 </main>
  <!--CONTENT-->
