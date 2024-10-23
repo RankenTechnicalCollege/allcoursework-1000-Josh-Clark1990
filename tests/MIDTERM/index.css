@@ -1,16 +1,17 @@
-body{
+body {
   font-family: "Hind Madurai", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.navbar{
+.navbar {
   font-size: 2em;
   font-family: "Hind Madurai", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-.jumbotron{
+
+.jumbotron {
   background-image: url(/images/charity.webp);
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,24 +22,40 @@ body{
   font-family: "Hind Madurai", sans-serif;
   font-weight: 400;
   font-style: normal;
-  
+  border-style: groove;
+  border-color: aqua;
+
 }
 
-.whatwedo{
+.card {
   font-size: 3.5em;
   font-family: "Hind Madurai", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
-  text-decoration:underline; 
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.carousel-item{
-margin: 2px;
-padding: 2px;
-border-style: inset;
-border-width: 7px;
-border-color:orange;
+.carousel {
+  max-height: vh100;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: initial;
+}
+
+.carousel-item {
+  border-style: inset;
+  border-width: 7px;
+  border-color: orange;
+  max-height: fit-content;
+}
+
+
+footer {
+  border-style: groove;
+  border-color: blue;
 
 }
 
