@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1> Sales Tax Calculator</h1>
+  <h3>Enter Subtotal and Tax Rate and then click "Calculate</h3>
+
+  <form>
+    <label for="subtotal">Subtotal</label><br>
+    <input type="number" id="subtotal" name="Subtotal"><br>
+    <label for="taxrate">Tax Rate</label><br>
+    <input type="number" id="taxrate" name="taxrate"><br>
+    <label for="salestax">Sales Tax</label><br>
+    <input type="number" id="salestax" name="salestax"><br>
+    <button type="submit" onclick="calcTax()">Calculate Tax</button>
+    <button type="reset" value="Submit">Clear</button><br>
+  </form>
+
+  <script>
+    "use strict";
+
+    function calcTax() {
+      let subtotal;
+
+      if(isNaN(subtotal) || subtotal < 0 || subtotal > 10000){
+       window.alert("Please enter a number between 0 and 10000");
+      }
+      
+      let taxrate;
+
+      if(isNaN(taxrate) || taxrate < 0 || taxrate > 12){
+        window.alert("Please enter a number between 0 and 12");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -32,7 +32,7 @@ function calculateShipping() {
     shipping=price * 0.10;
   }
   const total= price + shipping;
-  const display= `Your Shipping Total is: ${shipping.toFixed(2)}<br>Total Cost: ${total.toFixed(2)}`;
+  const display= `Your Shipping Total is:$ ${shipping.toFixed(2)}<br>Total Cost:$ ${total.toFixed(2)}`;
   document.getElementById("ship").innerHTML = display;
 }
 
