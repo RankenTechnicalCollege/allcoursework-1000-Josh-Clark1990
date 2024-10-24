@@ -22,8 +22,7 @@
   <header>
 
     <!--NAVBAR-->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex border border-4 border-primary bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex border border-4 border-primary bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="/images/updatedlogo.png" alt="logo" width="150px" height="150px">
@@ -44,48 +43,55 @@
       </div>
     </nav>
 
-
-
   </header>
+
   <!--CONTENT-->
-  <main class="bg-info">
-    <h1 class="text-center">Upcoming Events and Volunteer Signup</h1>
-    <div class="d-flex flex-row">
-      <div class="calendar d-flex flex-column  align-item-center border border-3 border-primary bg-light p-2">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=9d39387b6972c26fef63ec530ebf6a16024928464de5cc283afa9c09088dbdc0%40group.calendar.google.com&ctz=America%2FChicago"
-          style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  <main class="bg-info py-5">
+    <div class="container">
+      <h1 class="text-center mb-4">Upcoming Events and Volunteer Signup</h1>
+      <div class="row">
+        <!-- Calendar Section -->
+        <div class="col-12 col-lg-6 mb-4">
+          <div class="calendar border border-3 border-primary bg-light p-2">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=9d39387b6972c26fef63ec530ebf6a16024928464de5cc283afa9c09088dbdc0%40group.calendar.google.com&ctz=America%2FChicago"
+              style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- Signup Section -->
+        <div class="col-12 col-lg-6">
+          <div class="signup border border-3 border-primary bg-light p-2">
+            <form action="mailto:ctc.info21@gmail.com" method="post" enctype="text/plain">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" id="email" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="comment" class="form-label">Comment:</label>
+                <input type="text" id="comment" class="form-control" size="50">
+              </div>
+              <button type="submit" class="btn btn-primary me-2">Send</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+
+            <br>
+
+            <img src="/images/volunteers-3874924_1920.png" class="img-fluid mt-3" alt="Volunteers">
+          </div>
+        </div>
       </div>
-
-
-
-      <div class="signup d-flex flex-column align-item-center border border-3 border-primary bg-light p-2">
-        <form action="mailto:ctc.info21@gmail.com" method="post" enctype="text/plain">
-          Name:<br>
-          <input type="text"><br>
-          E-mail:<br>
-          <input type="text"><br>
-          Comment:<br>
-          <input type="text" size="50"><br><br>
-          <input type="submit" value="Send">
-          <input type="reset" value="Reset">
-        </form>
-
-        <br>
-
-        <img src="/images/volunteers-3874924_1920.png" class="d-flex flex-column" height="400px" width="635px">
-      </div>
-
-
-
-
     </div>
-
   </main>
+
   <!--FOOTER-->
-  <footer class="bg-warning rounded d-flex">
-    &COPY;Connecting Through Charity 2024
-    <a class="link" href="https://www.facebook.com/ConnectingThroughCharity/" target="_blank">
+  <footer class="bg-warning rounded d-flex justify-content-center align-items-center py-3">
+    &COPY; Connecting Through Charity 2024
+    <a class="link mx-2" href="https://www.facebook.com/ConnectingThroughCharity/" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
         viewBox="0 0 16 16">
         <path
@@ -93,10 +99,10 @@
       </svg>
     </a>
     <a href="https://www.ranken.edu/" target="_blank">
-      <img src="/images/rankenlogo.jpg" width="16" height="16">
+      <img src="/images/rankenlogo.jpg" width="16" height="16" alt="Ranken Logo">
     </a>
     <a href="https://us.nextdoor.com/pages/connecting-through-charity-ofallon-mo/" target="_blank">
-      <img src="/images/nextdoor.png" width="16" height="16">
+      <img src="/images/nextdoor.png" width="16" height="16" alt="Nextdoor Logo">
     </a>
   </footer>
 </body>

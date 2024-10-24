@@ -20,10 +20,8 @@
 <body class="bg-primary">
   <!--HEADER-->
   <header>
-
     <!--NAVBAR-->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex border border-4 border-primary bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-muted text-light d-flex border border-4 border-primary bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="/images/updatedlogo.png" alt="logo" width="150px" height="150px">
@@ -43,17 +41,14 @@
         </div>
       </div>
     </nav>
-
-
-
   </header>
 
   <!--CONTENT-->
-  <main class="bg-info d-flex align-item-center">
-    <div class="row">
+  <main class="bg-info d-flex align-items-center">
+    <div class="row w-100">
       <h1 class="text-center">Please Donate Today</h1>
-      <div class="d-flex align-item-center col col-lg6 col-md6 col-sm12">
-        <form action="https://www.paypal.com/donate" target="_blank" method="post" target="_top">
+      <div class="col col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
           <!-- Identify your business so that you can collect the payments. -->
           <input type="hidden" name="business" value="#">
           <!-- Specify details about the contribution -->
@@ -63,33 +58,35 @@
           <input type="hidden" name="currency_code" value="USD">
           <!-- Display the payment button. -->
           <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
-            alt="Donate">
+            alt="Donate with PayPal button">
           <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
         </form>
       </div>
-      <div class="d-flex align-item-center col col-lg6 col-md6 col-sm12">
-        <p class="text-center">"Please consider donating items to us that we can use to help those in need such as
+      <div class="col col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+        <p class="text-center">"Please consider donating items to us that we can use to help those in need, such as
           clothing, baby formula, household goods, and school supplies."</p>
       </div>
     </div>
   </main>
 
   <!--FOOTER-->
-  <footer class="bg-warning rounded d-flex">
-    &COPY;Connecting Through Charity 2024
-    <a class="link" href="https://www.facebook.com/ConnectingThroughCharity/" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
-        viewBox="0 0 16 16">
-        <path
-          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-      </svg>
-    </a>
-    <a href="https://www.ranken.edu/" target="_blank">
-      <img src="/images/rankenlogo.jpg" width="16" height="16">
-    </a>
-    <a href="https://us.nextdoor.com/pages/connecting-through-charity-ofallon-mo/" target="_blank">
-      <img src="/images/nextdoor.png" width="16" height="16">
-    </a>
+  <footer class="bg-warning rounded d-flex justify-content-between align-items-center p-3">
+    &COPY; Connecting Through Charity 2024
+    <div class="social-icons">
+      <a class="link mx-2" href="https://www.facebook.com/ConnectingThroughCharity/" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+          viewBox="0 0 16 16">
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+        </svg>
+      </a>
+      <a class="link mx-2" href="https://www.ranken.edu/" target="_blank">
+        <img src="/images/rankenlogo.jpg" alt="Ranken Logo" width="16" height="16">
+      </a>
+      <a class="link mx-2" href="https://us.nextdoor.com/pages/connecting-through-charity-ofallon-mo/" target="_blank">
+        <img src="/images/nextdoor.png" alt="Nextdoor Logo" width="16" height="16">
+      </a>
+    </div>
   </footer>
 </body>
 
