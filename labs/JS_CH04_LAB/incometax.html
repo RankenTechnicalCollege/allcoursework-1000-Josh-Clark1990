@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Income Tax Calculator</title>
 </head>
+
 <body>
 
   <h1>Income Tax Calculator</h1>
   <form>
     <label for="taxincome">Enter taxable income:</label>
     <input type="number" id="taxincome" name="taxincome">
-    <button type="button" onclick="calcIncome" id="calcIncome">Calculate</button><br><br>
+    <button type="button" onclick="calcIncome()" id="calcIncome">Calculate</button><br><br>
     <label for="taxowed">Income tax owed:</label>
     <output type="number" id="owed" name="owed"></output><br>
-    
+
 
   </form>
-  
+
 
   <script>
     "use strict";
 
     document.addEventListener("DOMContentLoaded", (event)); {
-  console.log("DOM fully loaded and parsed");}
+      console.log("DOM fully loaded and parsed");
+    }
 
-  function calcIncome(){
+    function calcIncome() {
 
-    const taxincome = parseFloat(document.getElementById("taxincome").value;
+      const taxincome = parseFloat(document.getElementById("taxincome").value);
 
-    if isNaN || or <= 0;
-    window.alert("Please enter a valid positive number");
+      if (isNaN || or <= 0); {
+        window.alert("Please enter a valid positive number");
 
-    if taxincome > 0 || < 9875;
-    then owed = 0 + 10%;
+      } if (taxincome > 0 || taxincome < 9875); {
+    then (owed = (taxincome * .10) + 0);
 
-    while taxincome > 9875 || < 40125;
-    then owed = 9875.50 + 12%;
+      } while (taxincome > 9875 ||taxincome < 40125); {
+    then (owed = (taxincome *.12) + 9875.50);
 
-    while taxincome > 40125 || < 85525;
-    then owed = 4617.50 + 22%;
+      } while (taxincome > 40125 ||taxincome < 85525); {
+    then (owed = (taxincome + .22) + 4617.50);
 
-    while tax income > 85525 || < 163300;
-    then owed = 14605.50 + 24%;
+      } while (taxincome > 85525 ||taxincome < 163300); {
+    then (owed = (taxincome * .24) + 14605.50);
 
-    while taxincome > 163300 || <=207350;
-    then owed = 33271.50 + 32%;
+      } while (taxincome > 163300 ||taxincome <= 207350); {
+    then (owed =(taxincome * .32) + 33271.50);
 
-    while taxincome > 207350 || < 518400;
-    then owed = 47367.50 + 35%;
+      } while (taxincome > 207350 ||taxincome < 518400); {
+    then (owed =(taxincome * .35) + 47367.50);
 
-    while taxincome > 518400;
-    then owed = 156235 + 37%;
-
- 
-
-
-  
-    document.getElementById("owed").value = owed.toFixed(2);
-    console.log("this is the tax income");
+      } while (taxincome > 518400); {
+    then (owed = (taxincome * .37) + 156235);
+      }
 
 
 
-  }
+
+      document.getElementById("calcIncome()").onclick = owed.toFixed(2);
+      document.getElementById("owed").value = owed.toFixed(2);
+      console.log("this is the tax income");
 
 
-</body>
-</html>
+
+    }
+    </script>
+
+</body >
+</html >
