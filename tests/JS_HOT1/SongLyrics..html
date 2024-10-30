@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Lyrics</title>
+</head>
+<body>
+
+<form>
+  <label for="input">Please Enter a Number Between 1 and 3</label><br>
+  <input type="text" id="input"><br>
+  <button type="button" onclick="inputNumber()">Submit</button><br>
+</form>  
+  
+<script>
+  "use strict";
+
+  function inputNumber(){
+    let input= parseInt(document.getElementById("input").value);
+
+    if (input == 1){
+      window.alert("One is the loneliest number that you'll ever do")
+      return;
+    } while (input == 2){
+      window.alert("Two can be as bad as one. It's the loneliest number since the number one")
+      return;
+    } while (input == 3){
+      window.alert("There is no three")
+      return;
+    } while (input < 1 || input > 3){
+      window.alert("You didn't enter a valid number")
+      return;
+    } while (isNaN){
+      window.alert("Please enter a number, not a word")
+      return;
+    
+  }
+}
+</script>
+
+</body>
+</html>
