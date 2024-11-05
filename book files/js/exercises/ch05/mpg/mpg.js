@@ -4,9 +4,9 @@ const $ = selector => document.querySelector(selector);
 
 const isInvalidValue = val => { 
     if (isNaN(val)) {
-        console.log("Value is not a number");
+        console.error("Value is not a number");
     } else if (val <= 0) {
-        console.log(`Value ${val} is not greater than zero.`);
+        console.error(`Value ${val} is not greater than zero.`);
     }
     return isNaN(val) || val <= 0
 };
