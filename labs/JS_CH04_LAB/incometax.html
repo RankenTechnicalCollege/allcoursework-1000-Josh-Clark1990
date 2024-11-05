@@ -13,59 +13,48 @@
   <form>
     <label for="taxincome">Enter taxable income:</label>
     <input type="number" id="taxincome" name="taxincome">
-    <button type="button" onclick="calcIncome" id="calcIncome">Calculate</button><br><br>
+    <button type="button" onclick="calcIncome()" id="calcIncome">Calculate</button><br><br>
     <label for="taxowed">Income tax owed:</label>
-    <output type="number" id="owed" name="owed"></output><br>
-    
-
+    <output id="owed" name="owed"></output><br>
   </form>
-  
 
   <script>
     "use strict";
 
-    document.addEventListener("DOMContentLoaded", (event)); {
-  console.log("DOM fully loaded and parsed");}
+    document.addEventListener("DOMContentLoaded", (event) => {
+      console.log("DOM fully loaded and parsed");
+    });
 
-  function calcIncome(){
+    function calcIncome() {
+      const taxIncome = parseFloat(document.getElementById("taxincome").value);
+      let owed = 0;
 
-    const taxincome = parseFloat(document.getElementById("taxincome").value;
+      if (isNaN(taxIncome) || taxIncome <= 0) {
+        window.alert("Please enter a valid positive number");
+        return; // Exit function if input is invalid
+      }
 
-    if isNaN || or <= 0;
-    window.alert("Please enter a valid positive number");
+      // Tax bracket calculations
+      if (taxIncome <= 9875) {
+        owed = taxIncome * 0.10;
+      } else if (taxIncome <= 40125) {
+        owed = 987.50 + (taxIncome - 9875) * 0.12;
+      } else if (taxIncome <= 85525) {
+        owed = 4617.50 + (taxIncome - 40125) * 0.22;
+      } else if (taxIncome <= 163300) {
+        owed = 14605.50 + (taxIncome - 85525) * 0.24;
+      } else if (taxIncome <= 207350) {
+        owed = 33271.50 + (taxIncome - 163300) * 0.32;
+      } else if (taxIncome <= 518400) {
+        owed = 47367.50 + (taxIncome - 207350) * 0.35;
+      } else {
+        owed = 156235 + (taxIncome - 518400) * 0.37;
+      }
 
-    if taxincome > 0 || < 9875;
-    then owed = 0 + 10%;
-
-    while taxincome > 9875 || < 40125;
-    then owed = 9875.50 + 12%;
-
-    while taxincome > 40125 || < 85525;
-    then owed = 4617.50 + 22%;
-
-    while tax income > 85525 || < 163300;
-    then owed = 14605.50 + 24%;
-
-    while taxincome > 163300 || <=207350;
-    then owed = 33271.50 + 32%;
-
-    while taxincome > 207350 || < 518400;
-    then owed = 47367.50 + 35%;
-
-    while taxincome > 518400;
-    then owed = 156235 + 37%;
-
- 
-
-
-  
-    document.getElementById("owed").value = owed.toFixed(2);
-    console.log("this is the tax income");
-
-
-
-  }
-
-
+      // Display the result
+      document.getElementById("owed").value = owed.toFixed(2);
+      console.log("Calculated tax owed:", owed);
+    }
+  </script>
 </body>
 </html>
