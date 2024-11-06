@@ -4,9 +4,9 @@ const $ = selector => document.querySelector(selector);
 
 const isInvalidValue = val => { 
     if (isNaN(val)) {
-        console.error("Value is not a number");
+        console.log("Value is not a number");
     } else if (val <= 0) {
-        console.error(`Value ${val} is not greater than zero.`);
+        console.log(`Value ${val} is not greater than zero.`);
     }
     return isNaN(val) || val <= 0
 };
@@ -44,7 +44,7 @@ const processEntries = () => {
         console.log("The data is valid and the calculation is next");
         const mpg = miles / gallons;
         console.log("mpg = " + mpg);
-        $("#mpg").value = mpg.toFixed(1);
+        $("#mpg").value = mpg.toFixed(2);
     } else {
         alert(errorMessage);
     }

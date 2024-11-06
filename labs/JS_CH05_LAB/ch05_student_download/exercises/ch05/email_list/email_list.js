@@ -2,8 +2,7 @@ const $ = selector => document.querySelector(selector);
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    join_list.
-    addEventListener("click", () => {
+    $("#join_List").addEventListener("click", () => {
         // get values user entered in textboxes
         const email1 = $("#email_1").value;
         const email2 = $("#email_2").value;

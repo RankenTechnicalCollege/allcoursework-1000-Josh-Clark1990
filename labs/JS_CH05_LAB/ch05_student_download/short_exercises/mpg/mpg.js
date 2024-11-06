@@ -2,13 +2,15 @@
 
 const $ = selector => document.querySelector(selector);
 
-const getErrorMsg = lbl => `${lbl} Read the instructions bozo ;)`;
+const getErrorMsg = lbl => `${lbl} must be a valid number greater than zero.`;
 
 const focusAndSelect = selector => {
     const elem = $(selector);
     elem.focus();
     elem.select();
 };
+
+const calculateMPG = (miles, gallons) => (miles / gallons).toFixed();
 
 const processEntries = () => {
     const miles = parseFloat($("#miles").value);
@@ -21,18 +23,11 @@ const processEntries = () => {
         alert(getErrorMsg("Gallons of gas used"));
         focusAndSelect("#gallons");
     } else {
-        $("#mpg").value = (miles / gallons).toFixed(2);
+        $("#mpg").value = calculateMpg(miles / gallons);
     }
 };
-
-const clearEntries = () => {
-    document.getElementById("miles").reset;
-    document.getElementById("gallons").reset;
-    document.getElementById("mpg").reset; 
-}
 
 document.addEventListener("DOMContentLoaded", () => {
     $("#calculate").addEventListener("click", processEntries);
     $("#miles").focus();
-    $("#clearEntries").addEventListener("click",clearEntries);
 });
