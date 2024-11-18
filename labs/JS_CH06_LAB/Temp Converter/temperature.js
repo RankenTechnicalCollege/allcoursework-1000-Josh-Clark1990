@@ -1,11 +1,11 @@
 "use strict";
 
-        // Select radio buttons and the label
+    
         const radio1 = document.getElementById('radio1');
         const radio2 = document.getElementById('radio2');
         const textInputLabel = document.getElementById('textInputLabel');
         const textOutputLabel = document.getElementById('textOutputLabel');
-        // Add event listeners for each radio button
+        // changing the text when radio is selected
         radio1.addEventListener('change', function () {
             if (radio1.checked) {
                 textInputLabel.textContent = 'Enter F Degrees:';
