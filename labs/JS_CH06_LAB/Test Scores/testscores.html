@@ -3,35 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Scores</title>
+  <title>Score Manager</title>
 </head>
 <body>
-<h1>Use a Test Score Array</h1>
-<br>
-<form>
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" autofocus>
-  <br><br>
-  <label for="score">Score:</label>
-  <input type="number" name="score" id="score">
-  <br><br>
-  <button type="button" id="add" value="add to array" name="addtoarray" onclick="addToArray()">Add To Array</button>
-  <button type="button" id="display" name="displayresults" onclick="displayResults()">Display Results</button>
-  <button type="button" id="scores" name="displayscores" onclick="displayScores()">Display Scores</button>
-</form>
-
-<h1>Results</h1>
-<div class="resultdisplay" id="results">
-  <p class="average"></p>
-  <p class="high"></p>
-</div>
-
-
-<h1>Scores</h1>
-<div class="scoredisplay">
-
-</div>
-
+  <h1>Test Score Manager</h1>
+  <div>
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter name" />
+    <label for="scoreInput">Score:</label>
+    <input type="number" id="scoreInput" placeholder="Enter score" />
+    <button id="addButton">Add to Array</button>
+    <button id="resultsButton">Display Results</button>
+    <button id="scoresButton">Display Scores</button>
+  </div>
+  <h2>Results</h2>
+  <p id="results"></p>
+  <h2>All Scores</h2>
+  <ul id="scoreList"></ul>
   <script src="testscores.js"></script>
 </body>
 </html>

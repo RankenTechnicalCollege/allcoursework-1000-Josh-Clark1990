@@ -1,40 +1,62 @@
-"use strict";
-document.addEventListener("DOMContentLoaded"), () =>{
-  const $ = selector => document.querySelector(selector);
+// Array to store scores and names
+const scores = [];
 
-const names = [];
-const scores = []; 
+// Function to add a name and score to the array
+function addScore() {
+  const nameInput = document.getElementById("nameInput");
+  const scoreInput = document.getElementById("scoreInput");
+  const name = nameInput.value.trim();
+  const score = parseFloat(scoreInput.value);
 
-$(addToArray).onclick= () => {
-  if(checkInput()){
-    let name = $(name).value;
-    let score = parseFLoat($(score).value);
-    names.push(name);
-    scores.push(score);
+  if (!name || isNaN(score)) {
+    alert("Please enter a valid name and score.");
+    return;
   }
-else if(checkInput()== false);
 
-}
-}
-
-$('#display').onclick = () => {
-  let results = $("#results");
-  resultsSpan1 = results.childNodes[3].lastChild;
-  const max = Math.max(...scores);
-  resultsSpan1.textContent = max;
-  resultsSpan2 = results.childNodes[5].lastChild;
-  watchIndex = scores.indexof(max);
-  resultsSpan2.textContent = names[matchIndex];
+  scores.push({ name, score });
+  nameInput.value = "";
+  scoreInput.value = "";
+  alert(`${name} with score ${score} added!`);
 }
 
-$('#scores').onclick = () => {
-  let section =$("section");
-  section.innerHTML = "";
-  for (let i = 0; i < names.length; i++){
-    let pElement = document.createElement("p");
-    let ScoresText = document.createTextNode(`${names[i]} ${scores[i]}`);
-    pElement.appendChild(ScoresText);
-    section.appendChild(pElement);
+// Function to display the average and highest score
+function displayResults() {
+  if (scores.length === 0) {
+    document.getElementById("results").textContent = "No scores available.";
+    return;
   }
+
+  const totalScore = scores.reduce((sum, item) => sum + item.score, 0);
+  const averageScore = (totalScore / scores.length).toFixed(2);
+
+  const highestScoreEntry = scores.reduce((max, item) =>
+    item.score > max.score ? item : max
+  );
+
+  document.getElementById("results").textContent =
+    `Average Score: ${averageScore}, Highest Score: ${highestScoreEntry.score} (${highestScoreEntry.name})`;
 }
 
+// Function to display all names and scores
+function displayScores() {
+  const scoreList = document.getElementById("scoreList");
+  scoreList.innerHTML = "";
+
+  if (scores.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No scores available.";
+    scoreList.appendChild(li);
+    return;
+  }
+
+  scores.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name}: ${item.score}`;
+    scoreList.appendChild(li);
+  });
+}
+
+// Attach event listeners to buttons
+document.getElementById("addButton").addEventListener("click", addScore);
+document.getElementById("resultsButton").addEventListener("click", displayResults);
+document.getElementById("scoresButton").addEventListener("click", displayScores);
