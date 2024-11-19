@@ -12,12 +12,17 @@ function addScore() {
     alert("Please enter a valid name and score.");
     return;
   }
+  if (score > 100 || score < 0){
+    alert("Please Enter a score between 0 and 100");
+    return;
+  }
 
   scores.push({ name, score });
   nameInput.value = "";
   scoreInput.value = "";
   alert(`${name} with score ${score} added!`);
 }
+
 
 // Function to display the average and highest score
 function displayResults() {
