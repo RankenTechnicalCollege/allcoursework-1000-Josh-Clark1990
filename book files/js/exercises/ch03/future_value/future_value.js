@@ -6,23 +6,24 @@ do {
     let investment = 0;
     do {
         investment = parseFloat(prompt("Enter investment amount as xxxxx.xx", 10000));
-    } while (isNaN(investment));
+    } while (isNaN(investment) || investment <= 0);
 
     let rate = 0;
     do {
         rate = parseFloat(prompt("Enter interest rate as xx.x", 7.5));
-    } while (isNaN(rate));
+    } while (isNaN(rate) || rate < 0 || rate > 15);
     
 
     let years = 0;
     do {
         years = parseInt(prompt("Enter number of years", 10));
-    } while (isNaN(years));
+    } while (isNaN(years) || years <= 0);
 
 
     let futureValue = investment;
     for (let i = 1; i <= years; i++) {
-        futureValue += futureValue * rate / 100;
+        let interestEarned = futureValue * rate / 100;
+        futureValue += interestEarned;
     }
 
     document.write(`<p><label>Investment amount:</label> ${investment}</p>`);

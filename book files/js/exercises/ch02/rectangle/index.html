@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Miles Per Gallon Calculator</title>
-    <link rel="stylesheet" href="mpg.css">
+    <link rel="stylesheet" href="rectangle.css">
 </head>
 <body>
     <main>
-        <h1>The Miles Per Gallon Calculator</h1>
+        <h1>The Area and Perimeter Calculator</h1>
+
+        <p id="output1">1</p>
+        <p id="output2">2</p>
+        <p id="output3">3</p>
+        <p id="output4">4</p>
         <script>
             "use strict";
             
-            // get miles driven from user
-            const miles = parseInt(prompt("Enter miles driven"));
+            const length = parseInt(prompt("Please Enter Length"));
+            const width = parseInt(prompt("Please Enter Width"));
 
-            // get gallons used from user
-            const gallons = parseInt(prompt("Enter gallons of gas used"));
+            const area = length * width;
+            const perimeter = (length * 2) + ( width * 2);
 
-            // calculate mpg
-            const mpg = parseFloat(miles/gallons);
+            const html1 = "Length:" + length;
+            const html2 = "Width:" + width;
+            const html3 = "Area:" + area;
+            const html4 = "Perimeter:" + perimeter;
 
-            // display results
-            const html = `<p><label>Miles: </label>${miles}</p>
-                <p><label>Gallons: </label>${gallons}</p>
-                <p><label>MPG: </label>${mpg.toFixed(2)}</p>`;
-            document.write(html);
+            document.getElementById("output1").innerHTML = html1;
+            document.getElementById("output2").innerHTML = html2;
+            document.getElementById("output3").innerHTML = html3;
+            document.getElementById("output4").innerHTML = html4;
+
+
         </script>    
     </main>
 </body>
