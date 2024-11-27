@@ -13,7 +13,7 @@ $(document).ready(() => {
     const link = evt.currentTarget;
 
     //swap image
-    $("main_image").attr("src, link.href");
+    $("#main_image").attr("src", link.href);
 
     //swap caption
     $("#caption").text(link.title);

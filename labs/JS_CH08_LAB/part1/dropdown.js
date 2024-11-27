@@ -7,10 +7,10 @@ $(document).ready( () => {
   const h2 = evt.currentTarget;
 
   //toggle minus class for h2 tag
-  $(h2).toggleClass("minus");
+  $(h2).toggleClass("topic");
 
   //show or hide related div
-  if ($(h2).attr("class") !== minus) {
+  if ($(h2).attr("class") ) {
     $(h2).next().hide();
   }
   else {
