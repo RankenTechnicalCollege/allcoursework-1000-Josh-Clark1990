@@ -22,3 +22,4 @@ $(document).ready( () => {
 //set focus on first h2 tag's <a> tag
 $("faqs").find("a:first").focus();
 });
+9
