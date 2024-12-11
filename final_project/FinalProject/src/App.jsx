@@ -2,9 +2,10 @@ import { useState, useEffect} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {nanoid} from 'nanoid';
-import AddStudent from './AddStudent';
 import _ from 'lodash';
-import Student from './Student';
+import Student from './component/Student';
+import AddStudent from './component/AddStudent';
+
 
 
 function App() {
@@ -15,7 +16,16 @@ function App() {
   const [gradYear, setGradYear] = useState('');
 
   useEffect(() => {
-    saveStudents(students);
+    if(localStorage){
+      const studentsLocalStorage = JSON.parse(localStorage.getItem('students'));
+
+      if(studentsLocalStorage){
+        saveStudents(studentsLocalStorage);
+      }else{
+        saveStudents(students);
+      }
+    }
+ 
   },[]);
 
 
@@ -98,6 +108,10 @@ function App() {
     const saveStudents = (students) => {
       setAllStudents(students);
       setSearchResults(students);
+      if(localStorage){
+        localStorage.setItem('students', JSON.stringify(students));
+        console.log('saved to local storage');
+      }
     }
 
     const addStudent = (newStudent) => {
@@ -107,7 +121,14 @@ function App() {
     
     //DELETE
     const removeStudent = (studentToDelete) => {
-      console.table(studentToDelete);
+      const updatedStudentArray = allStudents.filter(student => student.id !== studentToDelete.id);
+      saveStudents(updatedStudentArray);
+    }
+
+    const updateStudent = (updatedStudent) => {
+      //console.table(updatedStudent);
+      const updatedStudentArray = allStudents.map(student => student.id === updatedStudent.id ? {...student, ...updatedStudent} : student);
+      saveStudents(updatedStudentArray)
     }
 
     //search
@@ -145,6 +166,7 @@ function App() {
       <div className='row'>
         {searchResults && searchResults.map((student) =>(
         <div className='col-lg-2' key={student.id}>
+          <Student student={student} removeStudent={removeStudent} updateStudent={updateStudent} />
 
         </div>)
         )}
