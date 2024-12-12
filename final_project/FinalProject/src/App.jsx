@@ -71,28 +71,28 @@ function App() {
       ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
+      GameName: "Jim",
       ConsoleName: "Nys",
       Developer: "pnys9@cnbc.com",
       image: "student10.jpg",
       ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
+      GameName: "frank",
       ConsoleName: "Nys",
       Developer: "pnys9@cnbc.com",
       image: "student10.jpg",
       ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
+      GameName: "Paaqaaaaaaai",
       ConsoleName: "Nys",
       Developer: "pnys9@cnbc.com",
       image: "student10.jpg",
       ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
+      GameName: "Paussssssssssssssssssli",
       ConsoleName: "Nys",
       Developer: "pnys9@cnbc.com",
       image: "student10.jpg",
@@ -112,7 +112,7 @@ function App() {
       setAllGames(games);
       setSearchResults(games);
       if(localStorage){
-        localStorage.setItem('games', JSON.stringify(games.LocalStorage));
+        localStorage.setItem(games, JSON.stringify(games));
         console.log('saved to local storage');
       }
     }
