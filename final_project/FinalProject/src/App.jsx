@@ -16,11 +16,11 @@ function App() {
   const [allGames, setAllGames] = useState(null);
   const [searchResults, setSearchResults] = useState(null);
   const [keywords, setKeywords] = useState('');
-  const [score, setScore] = useState('');
+  const [releaseYear, setReleaseYear] = useState('');
 
   useEffect(() => {
     if(localStorage){
-      const gamesLocalStorage = JSON.parse(localStorage.getItem('games'));
+      const gamesLocalStorage = JSON.parse(localStorage.getItem(games));
 
       if(gamesLocalStorage){
         saveGames(gamesLocalStorage);
@@ -36,74 +36,74 @@ function App() {
 
   const games=[{
     id:nanoid(),
-      gameName: "Jimmothy",
-      consoleName: "Jimbo",
-      developer: "hello@hotmail.com",
-      image: "student1.jpg",
-      score: 1999,
+    GameName: "Pauli",
+    ConsoleName: "Nys",
+    Developer: "pnys9@cnbc.com",
+    image: "student10.jpg",
+    ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
-      gameName: "Dexter",
-      consoleName: "Lab",
-      developer: "xxx_420blzit_xxx@hotmail.net",
-      image: "student2.jpg",
-      score: 1999
-    }, {
-      id:nanoid(),
-      gameName: "Rafa",
-      consoleName: "DeLaffa",
-      developer: "jjisdumb@aol.com",
-      image: "student3.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Goku",
-      consoleName: "Kuddi",
-      developer: "gku3@salon.com",
-      image: "student4.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Kevon",
-      consoleName: "Elevon",
-      developer: "phazeclanhalo2@yellowpages.com",
-      image: "student5.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Der",
-      consoleName: "Dur Dur",
-      developer: "idontknow@howstuffworks.com",
-      image: "student6.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Shandra",
-      consoleName: "Nallar",
-      developer: "redplanzwalkr@ok.gov",
-      image: "student7.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Frank",
-      consoleName: "Sthe tank",
-      developer: "bigfrank@wp.com",
-      image: "student8.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Ivie",
-      consoleName: "Buncombe",
-      developer: "ibuncombe8@tinyurl.com",
-      image: "student9.jpg",
-      score: 1999,
-    }, {
-      id:nanoid(),
-      gameName: "Pauli",
-      consoleName: "Nys",
-      developer: "pnys9@cnbc.com",
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
       image: "student10.jpg",
-      score: 1999 ,
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
+    }, {
+      id:nanoid(),
+      GameName: "Pauli",
+      ConsoleName: "Nys",
+      Developer: "pnys9@cnbc.com",
+      image: "student10.jpg",
+      ReleaseYear: 1999 ,
     }];
 
     //save and add
@@ -143,8 +143,8 @@ function App() {
         keywordsArray = keywords.toLowerCase().split(' ');
       }
 
-      if(score){
-        keywordsArray.push(score.toString());
+      if(releaseYear){
+        keywordsArray.push(releaseYear.toString());
       }
 
       if(keywordsArray.length > 0){
@@ -187,7 +187,7 @@ function App() {
  
       </div>
       <label htmlFor='txtKeywords'>Search by Release Year</label>
-        <select className='form-select' value={score} onChange={e => setScore(e.currentTarget.value)} >
+        <select className='form-select' value={releaseYear} onChange={e => setReleaseYear(e.currentTarget.value)} >
           <option value=''>Select Year</option>
           {_(allGames).map(game => game.score).sort().uniq().map(year => <option key={year} value={year}>{year}</option>).value()}
         </select>

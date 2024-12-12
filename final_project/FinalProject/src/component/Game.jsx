@@ -7,19 +7,19 @@ const game = (props) => {
   const[GameName, setGameName] = useState('');
   const[ConsoleName, setConsoleName] = useState('');
   const[Developer,setDeveloper] = useState('');
-  const[Score, setScore] = useState('');
+  const[ReleaseYear, setReleaseYear] = useState('');
 
 
   useEffect(()=> {
     setGameName(props.game.GameName);
     setConsoleName(props.game.ConsoleName);
     setDeveloper(props.game.Developer);
-    setScore(props.game.Score);
+    setReleaseYear(props.game.releaseYear);
  },[]);
 
   const saveGame = () => {
     setEditMode(false);
-    const updatedGame = {GameName:GameName, ConsoleName:ConsoleName, Developer:Developer, Score:Score, id:props.game.id, image:props.game.image};
+    const updatedGame = {GameName:GameName, ConsoleName:ConsoleName, Developer:Developer, ReleaseYear:ReleaseYear, id:props.game.id, image:props.game.image};
     props.updateGame(updatedGame);
   }
 
@@ -30,7 +30,7 @@ const game = (props) => {
       <li className='list-group-item text-center'>{props.game.GameName}</li>
       <li className='list-group-item text-center'>{props.game.ConsoleName}</li>
       <li className='list-group-item text-center'>{props.game.Developer}</li>
-      <li className='list-group-item text-center'>{props.game.Score}</li>
+      <li className='list-group-item text-center'>{props.game.ReleaseYear}</li>
       <button type='button' className='btn btn-danger' onClick={() => props.removeGame(props.game)}>Delete Game <FontAwesomeIcon icon={faDeleteLeft} /></button>
       <button type='button' className='btn btn-warning' onClick={() => setEditMode(true)}>Edit Game  <FontAwesomeIcon icon={faEdit} /></button>
     </ul>
@@ -39,7 +39,7 @@ const game = (props) => {
       <li className='list-group-item text-center'><input type='text' className='form-control' value={GameName} onChange={(e) => setGameName(e.currentTarget.value)} /></li>
       <li className='list-group-item text-center'><input type='text' className='form-control' value={ConsoleName} onChange={(e) => setConsoleName(e.currentTarget.value)} /></li>
       <li className='list-group-item text-center'><input type='text' className='form-control' value={Developer} onChange={(e) => setDeveloper(e.currentTarget.value)} /></li>
-      <li className='list-group-item text-center'><input type='text' className='form-control' value={Score} onChange={(e) => setScore(e.currentTarget.value)} /></li>
+      <li className='list-group-item text-center'><input type='text' className='form-control' value={ReleaseYear} onChange={(e) => setReleaseYear(e.currentTarget.value)} /></li>
       <li className='list-group-item text-center'><button type='button' className='btn btn-secondary' onClick={saveGame}>Save</button></li>
     </ul>
 }
@@ -47,7 +47,7 @@ const game = (props) => {
 
 
     </div>
-  )
+  )  
 }
 
 export default game

@@ -8,7 +8,7 @@ const addGame  = (props) => {
   const[GameName, setGameName] = useState('');
   const[ConsoleName, setConsoleName] = useState('');
   const[Developer, setDeveloper] = useState('');
-  const[Score, setScore] = useState('');
+  const[ReleaseYear, setReleaseYear] = useState('');
   const[selectedFile, setSelectedFile] = useState();
 
   const doWork = () => {
@@ -17,7 +17,7 @@ const addGame  = (props) => {
       'GameName': GameName,
       'ConsoleName': ConsoleName,
       'Developer': Developer,
-      'Score': parseInt(Score),
+      'ReleaseYear': parseInt(ReleaseYear),
       'image': URL.createObjectURL(selectedFile)
     }
     props.addGame(newGame)
@@ -43,8 +43,8 @@ const addGame  = (props) => {
         <input type='text' id='txtDeveloper' placeholder='Developer' className='form-control' onChange={(event) => setDeveloper(event.currentTarget.value)} value={Developer}></input>
       </div>
       <div className='col-md-2'>
-        <label htmlFor='txtScore' className='form-label'>Score</label>
-        <input type='text' id='txtScore' placeholder='Score' className='form-control' onChange={(event) => setScore(event.currentTarget.value)} value={Score}></input>
+        <label htmlFor='txtScore' className='form-label'>Release Year</label>
+        <input type='text' id='txtScore' placeholder='ReleaseYear' className='form-control' onChange={(event) => setReleaseYear(event.currentTarget.value)} value={ReleaseYear}></input>
       </div>
       <div className='col-md-2'>
         <label htmlFor='fileUpload' className='form-label'>Game Image</label>
