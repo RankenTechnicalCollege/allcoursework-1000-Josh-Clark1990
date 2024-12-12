@@ -3,26 +3,29 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {nanoid} from 'nanoid';
 import _ from 'lodash';
-import Student from './component/Student';
-import AddStudent from './component/AddStudent';
+import Game from './component/Game';
+import AddGame from './component/AddGame';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faGamepad,} from '@fortawesome/free-solid-svg-icons';
+
 
 
 
 function App() {
 
-  const [allStudents, setAllStudents] = useState(null);
+  const [allGames, setAllGames] = useState(null);
   const [searchResults, setSearchResults] = useState(null);
   const [keywords, setKeywords] = useState('');
-  const [gradYear, setGradYear] = useState('');
+  const [score, setScore] = useState('');
 
   useEffect(() => {
     if(localStorage){
-      const studentsLocalStorage = JSON.parse(localStorage.getItem('students'));
+      const gamesLocalStorage = JSON.parse(localStorage.getItem('games'));
 
-      if(studentsLocalStorage){
-        saveStudents(studentsLocalStorage);
+      if(gamesLocalStorage){
+        saveGames(gamesLocalStorage);
       }else{
-        saveStudents(students);
+        saveGames(games);
       }
     }
  
@@ -31,125 +34,125 @@ function App() {
 
   //base array
 
-  const students=[{
+  const games=[{
     id:nanoid(),
-      firstName: "Jimmothy",
-      lastName: "Jimbo",
-      email: "hello@hotmail.com",
+      gameName: "Jimmothy",
+      consoleName: "Jimbo",
+      developer: "hello@hotmail.com",
       image: "student1.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Dexter",
-      lastName: "Lab",
-      email: "xxx_420blzit_xxx@hotmail.net",
+      gameName: "Dexter",
+      consoleName: "Lab",
+      developer: "xxx_420blzit_xxx@hotmail.net",
       image: "student2.jpg",
-      gradYear: 1999
+      score: 1999
     }, {
       id:nanoid(),
-      firstName: "Rafa",
-      lastName: "DeLaffa",
-      email: "jjisdumb@aol.com",
+      gameName: "Rafa",
+      consoleName: "DeLaffa",
+      developer: "jjisdumb@aol.com",
       image: "student3.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Goku",
-      lastName: "Kuddi",
-      email: "gku3@salon.com",
+      gameName: "Goku",
+      consoleName: "Kuddi",
+      developer: "gku3@salon.com",
       image: "student4.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Kevon",
-      lastName: "Elevon",
-      email: "phazeclanhalo2@yellowpages.com",
+      gameName: "Kevon",
+      consoleName: "Elevon",
+      developer: "phazeclanhalo2@yellowpages.com",
       image: "student5.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Der",
-      lastName: "Dur Dur",
-      email: "idontknow@howstuffworks.com",
+      gameName: "Der",
+      consoleName: "Dur Dur",
+      developer: "idontknow@howstuffworks.com",
       image: "student6.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Shandra",
-      lastName: "Nallar",
-      email: "redplanzwalkr@ok.gov",
+      gameName: "Shandra",
+      consoleName: "Nallar",
+      developer: "redplanzwalkr@ok.gov",
       image: "student7.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Frank",
-      lastName: "Sthe tank",
-      email: "bigfrank@wp.com",
+      gameName: "Frank",
+      consoleName: "Sthe tank",
+      developer: "bigfrank@wp.com",
       image: "student8.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Ivie",
-      lastName: "Buncombe",
-      email: "ibuncombe8@tinyurl.com",
+      gameName: "Ivie",
+      consoleName: "Buncombe",
+      developer: "ibuncombe8@tinyurl.com",
       image: "student9.jpg",
-      gradYear: 1999,
+      score: 1999,
     }, {
       id:nanoid(),
-      firstName: "Pauli",
-      lastName: "Nys",
-      email: "pnys9@cnbc.com",
+      gameName: "Pauli",
+      consoleName: "Nys",
+      developer: "pnys9@cnbc.com",
       image: "student10.jpg",
-      gradYear: 1999 ,
+      score: 1999 ,
     }];
 
     //save and add
 
-    const saveStudents = (students) => {
-      setAllStudents(students);
-      setSearchResults(students);
+    const saveGames = (games) => {
+      setAllGames(games);
+      setSearchResults(games);
       if(localStorage){
-        localStorage.setItem('students', JSON.stringify(students));
+        localStorage.setItem('games', JSON.stringify(games.LocalStorage));
         console.log('saved to local storage');
       }
     }
 
-    const addStudent = (newStudent) => {
-      const updatedStudents = [...allStudents,newStudent];
-      saveStudents(updatedStudents);
+    const addGame = (newGames) => {
+      const updatedGames = [...allGames,newGames];
+      saveGames(updatedGames);
     };
     
     //DELETE
-    const removeStudent = (studentToDelete) => {
-      const updatedStudentArray = allStudents.filter(student => student.id !== studentToDelete.id);
-      saveStudents(updatedStudentArray);
+    const removeGame = (gameToDelete) => {
+      const updatedGameArray = allGames.filter(game => game.id !== gameToDelete.id);
+      saveGames(updatedGameArray);
     }
 
-    const updateStudent = (updatedStudent) => {
+    const updateGame = (updatedGame) => {
       //console.table(updatedStudent);
-      const updatedStudentArray = allStudents.map(student => student.id === updatedStudent.id ? {...student, ...updatedStudent} : student);
-      saveStudents(updatedStudentArray)
+      const updatedGameArray = allGames.map(game => game.id === updatedGame.id ? {...game, ...updatedGame} : game);
+      saveGames(updatedGameArray)
     }
 
     //search
 
-    const searchStudents = () => {
+    const searchGames = () => {
       let keywordsArray = [];
 
       if(keywords){
         keywordsArray = keywords.toLowerCase().split(' ');
       }
 
-      if(gradYear){
-        keywordsArray.push(gradYear.toString());
+      if(score){
+        keywordsArray.push(score.toString());
       }
 
       if(keywordsArray.length > 0){
-        const searchResults = allStudents.filter(student => {
+        const searchResults = allGames.filter(game => {
           for(const word of keywordsArray){
-            if(student.firstName.toLowerCase().includes(word) ||
-              student.lastName.toLowerCase().includes(word) ||
-              student.gradYear === parseInt(word)){
+            if(game.gameName.toLowerCase().includes(word) ||
+              game.consoleName.toLowerCase().includes(word) ||
+              game.score === parseInt(word)){
                 return true;
               }
           }
@@ -157,38 +160,46 @@ function App() {
         });
         setSearchResults(searchResults);
       }else{
-        setSearchResults(allStudents)
+        setSearchResults(allGames)
       }
     };
 
   return (
     <div className='container'>
-      <div className='row'>
-        {searchResults && searchResults.map((student) =>(
-        <div className='col-lg-2' key={student.id}>
-          <Student student={student} removeStudent={removeStudent} updateStudent={updateStudent} />
+      <div className='row' id='allGames'>
+        <h3>Current Games</h3>
+        {searchResults && searchResults.map((game) =>(
+        <div className='col-lg-2' key={game.id}>
+          <Game game={game} removeGame={removeGame} updateGame={updateGame} />
 
         </div>)
         )}
 
       </div>
 
-      {/*!allStudents && <button type='button' className='btn btn-lrg btn-success' onClick={() => setAllStudents(students)}>Save Students</button>*/}
-      <AddStudent addStudent={addStudent} />
-      <div className='row mt-4'>
-        <div className='col-md4'></div>
-        <label htmlFor='txtkeywords'>Search by First or Last Name</label>
-        <input type='text' className='form-control' placeholder='Search First or Last Name' onChange={e => setKeywords(e.currentTarget.value)} value={keywords} />
+      <AddGame addGame={addGame} />
+      <div className='row mt-4' id='searchGames'>
+        <h3>Search Games</h3>
+        <div className='col-md-4'></div>
+        <input type='text' className='form-control' placeholder='Search Game or Console Name' onChange={e => setKeywords(e.currentTarget.value)} value={keywords} />
+        <div className='col-md-4'>
+          <br></br>
+ 
       </div>
-      <div className='col-md-4'>
-        <select className='form-select' value={gradYear} onChange={e => setGradYear(e.currentTarget.value)} >
+      <label htmlFor='txtKeywords'>Search by Release Year</label>
+        <select className='form-select' value={score} onChange={e => setScore(e.currentTarget.value)} >
           <option value=''>Select Year</option>
-          {_(allStudents).map(student => student.gradYear).sort().uniq().map(year => <option key={year} value={year}>{year}</option>).value()}
+          {_(allGames).map(game => game.score).sort().uniq().map(year => <option key={year} value={year}>{year}</option>).value()}
         </select>
+        <br></br>
+        <button type='button' className='btn btn-lg btn-primary' onClick={searchGames}>Search Game <FontAwesomeIcon icon={faGamepad} /> </button>
       </div>
-      <div className='col-md-4'>
-        <button type='button' className='btn btn-lg btn-primary' onClick={searchStudents}>Search Students</button>
+      <div className='col-md-4 mt-3'>
+        <br></br>
+
       </div>
+      <br></br>
+
      
     </div>
     
