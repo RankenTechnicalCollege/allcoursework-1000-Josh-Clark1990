@@ -81,7 +81,7 @@ function App() {
       GameName: "frank",
       ConsoleName: "Nys",
       Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
+      image: "student1.jpg",
       ReleaseYear: 1999 ,
     }, {
       id:nanoid(),
