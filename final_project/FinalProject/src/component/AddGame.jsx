@@ -51,7 +51,7 @@ const addGame  = (props) => {
         <input type='file' id='fileUpload' className='form-control' onChange={imageUpdate}></input>
       </div>
       <div className='col-md-2'>
-        <button type='button' className='btn btn-success btn-lg' id='btnAdd' onClick={doWork}>Add Game <FontAwesomeIcon icon={faPlusSquare} /></button> 
+        <button type='button' className='btn btn-primary btn-lg' id='btnAdd' onClick={doWork}>Add Game <FontAwesomeIcon icon={faPlusSquare} /></button> 
       </div>
 
 

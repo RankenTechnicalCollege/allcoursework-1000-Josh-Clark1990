@@ -1,11 +1,27 @@
 #addGame{
   border-radius: 5%;
   box-shadow: 5px 5px 5px 5px gray;
-  border: thin solid black;
+  border: thick solid rgb(5, 160, 231);
   padding: 5em;
-  color:green;
+  color:rgb(0, 0, 0);
+  background-color: rgba(194, 22, 157, 0.589);
+  text-align: center;
 }
 
 li{
   color:blue;
+}
+
+.card{
+  border: thick solid rgb(5, 1, 5);
+  border-width: 10px;
+  border-style:groove;
+  width: 110%;
+}
+
+
+.card-img-top {
+width: 100%;
+height: 40vh;
+object-fit: cover;
 }

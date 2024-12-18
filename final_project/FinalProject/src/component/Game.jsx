@@ -1,6 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faDeleteLeft, faEdit, } from '@fortawesome/free-solid-svg-icons';
+import './AddGame.css';
+
+
+
 
 const game = (props) => {
   const [editMode, setEditMode] = useState(false);
@@ -25,7 +29,7 @@ const game = (props) => {
 
   return (
     <div className='card'>
-    <img src={props.game.image} alt='Our game' className='card-image-top mx-auto'/>
+    <img src={props.game.image} alt='Our game' className='card-img-top mx-auto img-fluid custom-img'/>
     {!editMode &&     <ul className='list-group list-group-flush'>
       <li className='list-group-item text-center'>{props.game.GameName}</li>
       <li className='list-group-item text-center'>{props.game.ConsoleName}</li>

@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     if(localStorage){
-      const gamesLocalStorage = JSON.parse(localStorage.getItem(games));
+      const gamesLocalStorage = JSON.parse(localStorage.getItem('games'));
 
       if(gamesLocalStorage){
         saveGames(gamesLocalStorage);
@@ -36,74 +36,88 @@ function App() {
 
   const games=[{
     id:nanoid(),
-    GameName: "Pauli",
-    ConsoleName: "Nys",
-    Developer: "pnys9@cnbc.com",
-    image: "student10.jpg",
-    ReleaseYear: 1999 ,
+    GameName: "World of Wacraft",
+    ConsoleName: "PC",
+    Developer: "Blizzard",
+    image: "world of warcraft.jpg",
+    ReleaseYear: 2004 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Final Fantasy XIV",
+      ConsoleName: "PC",
+      Developer: "Square Enix",
+      image: "finalfantasy14.webp",
+      ReleaseYear: 2013 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Diablo 2",
+      ConsoleName: "PC",
+      Developer: "Blizzard",
+      image: "diablo2.jpg",
+      ReleaseYear: 2000 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Va-11 Hall-A",
+      ConsoleName: "PC, PS4, Switch",
+      Developer: "Sukeban Games",
+      image: "va11halla.jpg",
+      ReleaseYear: 2016 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Castlevania Aria of Sorrow",
+      ConsoleName: "Gameboy Advance",
+      Developer: "Konami",
+      image: "castlevaniaaraia.jpg",
+      ReleaseYear: 2003 ,
     }, {
       id:nanoid(),
-      GameName: "Jim",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Super Mario World",
+      ConsoleName: "Super Nintendo",
+      Developer: "Nintendo",
+      image: "supermarioworld.jpg",
+      ReleaseYear: 1990 ,
     }, {
       id:nanoid(),
-      GameName: "frank",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student1.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Warhammer 40k Dawn of War Soulstorm",
+      ConsoleName: "PC",
+      Developer: "Iron Lore Entertainment",
+      image: "warhammer40ksoulstorm.png",
+      ReleaseYear: 2008 ,
     }, {
       id:nanoid(),
-      GameName: "Paaqaaaaaaai",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Castlevania Order of Eclessia",
+      ConsoleName: "Nintendo DS",
+      Developer: "Konami",
+      image: "castlevaniaeclessia.webp",
+      ReleaseYear: 2008 ,
     }, {
       id:nanoid(),
-      GameName: "Paussssssssssssssssssli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Bloodstained Ritual of the Night",
+      ConsoleName: "PS4, PC, Switch",
+      Developer: "Art Play Inc",
+      image: "bloodstainedritual.avif",
+      ReleaseYear: 2019 ,
     }, {
       id:nanoid(),
-      GameName: "Pauli",
-      ConsoleName: "Nys",
-      Developer: "pnys9@cnbc.com",
-      image: "student10.jpg",
-      ReleaseYear: 1999 ,
+      GameName: "Super Metroid",
+      ConsoleName: "Super Nintendo",
+      Developer: "Nintendo",
+      image: "supermetroid.jpg",
+      ReleaseYear: 1994 ,
+    }, {
+      id:nanoid(),
+      GameName: "Genshin Impact",
+      ConsoleName: "PC, PS5, Mobile",
+      Developer: "Mihoyo",
+      image: "genshinimpact.avif",
+      ReleaseYear: 2020,
+    }, {
+      id:nanoid(),
+      GameName: "Pokemon Crystal",
+      ConsoleName: "Gameboy Color",
+      Developer: "Game Freak",
+      image: "pokemoncrystal.jpg",
+      ReleaseYear: 2000,
     }];
 
     //save and add
@@ -112,7 +126,7 @@ function App() {
       setAllGames(games);
       setSearchResults(games);
       if(localStorage){
-        localStorage.setItem(games, JSON.stringify(games));
+        localStorage.setItem('games', JSON.stringify(games));
         console.log('saved to local storage');
       }
     }
@@ -150,11 +164,12 @@ function App() {
       if(keywordsArray.length > 0){
         const searchResults = allGames.filter(game => {
           for(const word of keywordsArray){
-            if(game.gameName.toLowerCase().includes(word) ||
-              game.consoleName.toLowerCase().includes(word) ||
-              game.score === parseInt(word)){
-                return true;
-              }
+            if((game.GameName && game.GameName.toLowerCase().includes(word)) ||
+            (game.ConsoleName && game.ConsoleName.toLowerCase().includes(word)) ||
+            game.ReleaseYear === parseInt(word)) {
+            return true;
+         }
+         
           }
           return false;
         });
@@ -186,11 +201,7 @@ function App() {
           <br></br>
  
       </div>
-      <label htmlFor='txtKeywords'>Search by Release Year</label>
-        <select className='form-select' value={releaseYear} onChange={e => setReleaseYear(e.currentTarget.value)} >
-          <option value=''>Select Year</option>
-          {_(allGames).map(game => game.score).sort().uniq().map(year => <option key={year} value={year}>{year}</option>).value()}
-        </select>
+
         <br></br>
         <button type='button' className='btn btn-lg btn-primary' onClick={searchGames}>Search Game <FontAwesomeIcon icon={faGamepad} /> </button>
       </div>
